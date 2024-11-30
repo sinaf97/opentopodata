@@ -5,11 +5,11 @@ services:
     ports:
       - "${APP_PORT:-5000}:5000"
     environment:
-      - APP_PORT=5000
-      - APP_HOST=0.0.0.0
       - DEBUG=False
-      - N_RANGE=20-40
+      - N_RANGE=25-40
       - E_RANGE=43-64
+#      - APP_PORT=5000
+#      - APP_HOST=0.0.0.0
 #      - MAX_POINTS_COUNT=1000000
 #      - DATA_DIR=/datasets
 #      - DATASET_FOLDER_NAME=sews-data
