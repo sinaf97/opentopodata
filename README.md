@@ -20,5 +20,5 @@ Here is the set of environment variables that can be set:
 | APP_HOST | Server IP |    0.0.0.0 | Any IP address |
 | APP_PORT | Server Port |    5000 | Any port number |
 | MAX_POINT_COUNT | Maximum length of the requested points |    1,000,000 | Any integer number(as long as it doesn't crash your system) |
-| DATA_DIR | The main directory that datasets live |    /data | /path/to/datasets/directory |
+| DATA_DIR | The main directory that datasets live in |    /data | /path/to/datasets/directory |
 | DATASET_FOLDER_NAME | The main dataset folder name to be loaded  |    sews-data | /folder-name |
