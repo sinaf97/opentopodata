@@ -113,8 +113,8 @@ async def startup_event():
 async def elevation_get(locations: str):
     """Get elevations for up to 1,000,000 coordinates."""
     coordinates = [
-        list(map(float, i.split(",")))
-        for i in locations.split("|")]
+        list(map(lambda x: float(x.strip()), i.split(",")))
+        for i in locations.split("|") if i]
     if len(coordinates) > int(float(os.environ.get("MAX_POINTS_COUNT", 10000000))):
         raise HTTPException(status_code=400, detail="Too many coordinates (limit is 1,000,000)")
 
@@ -125,8 +125,8 @@ async def elevation_get(locations: str):
 async def elevation_post(payload: Payload):
     """Get elevations for up to 1,000,000 coordinates."""
     coordinates = [
-        list(map(float, i.split(",")))
-        for i in payload.locations.split("|")]
+        list(map(lambda x: float(x.strip()), i.split(",")))
+        for i in payload.locations.split("|") if i]
     if len(coordinates) > int(float(os.environ.get("MAX_POINTS_COUNT", 10000000))):
         raise HTTPException(status_code=400, detail="Too many coordinates (limit is 1,000,000)")
 
