@@ -81,7 +81,7 @@ def batch_elevation(coordinates):
         longitudes = np.array([float(coord[1]) for coord in points])
 
         if file not in elevation_data:
-            raise HTTPException(status_code=422, detail=f"The N{file[0]} E0{file[1]} elevation tile is missing.")
+            raise HTTPException(status_code=404, detail=f"The N{file[0]} E0{file[1]} elevation tile is missing.")
         data, transform = elevation_data[file]
         col, row = ~transform * (longitudes, latitudes)
         row = np.floor(row).astype(int)
